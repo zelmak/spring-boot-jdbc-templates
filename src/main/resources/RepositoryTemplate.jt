@@ -1,0 +1,9 @@
+package ${packagePath};
+
+import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.ListCrudRepository;
+
+@Repository
+public interface ${className}Repository extends ListCrudRepository<${className}, ${idClass}> {
+
+}

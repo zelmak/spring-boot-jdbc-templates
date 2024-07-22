@@ -1,0 +1,40 @@
+package ${packagePath};
+
+import java.util.List;
+import java.util.Optional;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class ${className}Service {
+    
+    private final ${className}Repository ${initialLowerClassName}Repository;
+
+    public List<${className}> fetch${classNamePlural}() {
+       return ${initialLowerClassName}Repository.findAll();
+    }
+
+    public Optional<${className}> fetchById(${idClass} id) {
+      return ${initialLowerClassName}Repository.findById(id);
+    }
+
+    public ${className} create(${className} item) {
+       return ${initialLowerClassName}Repository.save(item);
+    }
+
+    public ${className} update(${className} item) {
+       return ${initialLowerClassName}Repository.save(item);
+    }
+
+    public ${className} patch(${className} item) {
+       return ${initialLowerClassName}Repository.save(item);
+    }
+
+    public void delete(${idClass} id) {
+       ${initialLowerClassName}Repository.deleteById(id);
+    }
+
+}

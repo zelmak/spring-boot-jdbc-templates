@@ -1,0 +1,54 @@
+package ${packagePath};
+
+import java.util.List;
+import java.util.Optional;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
+@RestController
+@RequestMapping("/${initialLowerClassNamePlural}")
+@RequiredArgsConstructor
+public class ${className}Controller {
+    
+    private final ${className}Service ${initialLowerClassName}Service;
+
+    @GetMapping
+    public List<${className}> fetch${classNamePlural}() {
+       return ${initialLowerClassName}Service.fetch${classNamePlural}();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<${className}> fetchById(@PathVariable("id") ${idClass} id) {
+      return ${initialLowerClassName}Service.fetchById(id);
+    }
+
+    @PostMapping
+    public ${className} create(@RequestBody ${className} item) {
+       return ${initialLowerClassName}Service.create(item);
+    }
+
+    @PutMapping
+    public ${className} update(@RequestBody ${className} item) {
+       return ${initialLowerClassName}Service.update(item);
+    }
+
+    @PatchMapping
+    public ${className} patch(@RequestBody ${className} item) {
+       return ${initialLowerClassName}Service.patch(item);
+    }
+
+    @DeleteMapping
+    public void delete(${idClass} id) {
+       ${initialLowerClassName}Service.delete(id);
+    }
+
+}
